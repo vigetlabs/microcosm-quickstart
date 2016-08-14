@@ -31,19 +31,22 @@
   "ava": {
     "concurrency": 4,
     "source": [
-      "src/**/*{.js,.js}"
+      "src/**/*.js"
     ],
     "files": [
-      "test/unit/**/*.test{.js,.js}"
+      "test/unit/**/*.test.js"
     ],
     "failFast": true,
     "require": [
-      "babel-register",
       "./test/helpers/setup-browser-env.js"
     ],
     "babel": "inherit"
   },
   "babel": {
-    "presets": [ "es2015", "stage-2", "react" ]
+    "presets": [
+      "es2015",
+      "stage-2",
+      "react"
+    ]
   }
 }
