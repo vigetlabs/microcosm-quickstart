@@ -1,0 +1,20 @@
+/**
+ * Application Stylesheet
+ */
+
+html {
+  border-top: 4px solid #184AE8;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 25px;
+  margin: 0 auto;
+  padding: 5% 40px;
+}
+
+h1 {
+  margin-bottom: 48px;
+}

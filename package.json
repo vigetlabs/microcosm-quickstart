@@ -1,0 +1,49 @@
+{
+  "name": "microcosm-quickstart",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "ava": "0.16.0",
+    "babel-preset-react": "6.11.1",
+    "babel-register": "6.11.6",
+    "enzyme": "2.4.1",
+    "jsdom": "9.4.2",
+    "nyc": "8.1.0",
+    "react-addons-test-utils": "15.3.0",
+    "react-scripts": "0.2.1"
+  },
+  "dependencies": {
+    "microcosm": "10.0.0-beta2",
+    "react": "^15.3.0",
+    "react-dom": "^15.3.0",
+    "react-router": "2.6.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "ava",
+    "test:cov:html": "nyc --cache --reporter=html ava",
+    "test:cov:lcov": "nyc --cache --reporter=text-lcov ava"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/react-scripts/config/eslint.js"
+  },
+  "ava": {
+    "concurrency": 4,
+    "source": [
+      "src/**/*{.js,.js}"
+    ],
+    "files": [
+      "test/unit/**/*.test{.js,.js}"
+    ],
+    "failFast": true,
+    "require": [
+      "babel-register",
+      "./test/helpers/setup-browser-env.js"
+    ],
+    "babel": "inherit"
+  },
+  "babel": {
+    "presets": [ "es2015", "stage-2", "react" ]
+  }
+}
