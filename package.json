@@ -34,7 +34,8 @@
       "src/**/*.js"
     ],
     "files": [
-      "test/unit/**/*.test.js"
+      "test/unit/**/*.test.js",
+      "test/integration/**/*.test.js"
     ],
     "failFast": true,
     "require": [

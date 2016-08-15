@@ -1,17 +1,7 @@
 import './style/application.css'
+import boot from './boot'
 
-import React from 'react'
-import DOM from 'react-dom'
-import Provider from 'microcosm/addons/provider'
-import { Router, browserHistory } from 'react-router'
-import Repo from './repo'
-import routes from './routes'
+// Do anything on startup here
 
-const app  = new Repo()
-const root = document.getElementById('root')
-
-DOM.render((
-  <Provider app={app}>
-    <Router history={browserHistory} routes={routes} />
-  </Provider>
-), root)
+// Then mount the application
+boot(document.getElementById('root'))
