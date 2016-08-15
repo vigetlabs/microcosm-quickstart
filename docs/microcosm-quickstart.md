@@ -156,6 +156,7 @@ class Planets extends Presenter {
         <li>Jupiter</li>
         <li>Saturn</li>
         <li>Uranus</li>
+        <li>Neptune</li>
         <li>Pluto</li>
       </ul>
     )
