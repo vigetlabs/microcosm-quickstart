@@ -3,9 +3,7 @@ import Planets from './stores/planets'
 
 class Repo extends Microcosm {
 
-  constructor(options) {
-    super(options)
-
+  setup() {
     this.addStore('planets', Planets)
   }
 
