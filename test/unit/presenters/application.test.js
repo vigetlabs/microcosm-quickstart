@@ -5,7 +5,7 @@ import App from '../../../src/presenters/application'
 import Repo from '../../../src/repo'
 
 test('mounts', assert => {
-  const el = mount(<App app={new Repo()} />)
+  const el = mount(<App repo={new Repo()} />)
 
   assert.truthy(el)
 })
