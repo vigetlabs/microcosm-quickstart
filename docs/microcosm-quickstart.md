@@ -30,7 +30,7 @@ Don't have npm? [Learn how to install Node.js and npm here](https://docs.npmjs.c
 The starter project will come with everything you need to get started
 with Microcosm. This also includes a project structure:
 
-```none
+```
 src/
 ├── actions
 ├── presenters
