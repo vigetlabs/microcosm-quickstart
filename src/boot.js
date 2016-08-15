@@ -8,7 +8,7 @@ export default function boot (el, history = browserHistory) {
   const repo = new Repo()
 
   function injectRepo (Component, props) {
-    return <Component {...props} app={repo} />
+    return <Component {...props} repo={repo} />
   }
 
   return DOM.render((

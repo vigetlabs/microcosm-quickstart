@@ -13,7 +13,7 @@
     "react-scripts": "0.2.1"
   },
   "dependencies": {
-    "microcosm": "10.0.0-beta2",
+    "microcosm": "10.0.0-beta3",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
     "react-router": "2.6.1"
