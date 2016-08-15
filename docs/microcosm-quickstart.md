@@ -14,18 +14,18 @@ We'll cover these steps:
 
 ## Project setup
 
-Let's clone the `microcosm-starter` repo and install
+Let's clone the `microcosm-quickstart` repo and install
 dependencies. Type these commands into your terminal:
 
 ```bash
-git clone https://github.com/nhunzaker/microcosm-starter
+git clone https://github.com/vigetlabs/microcosm-quickstart
 cd microcosm-starter
 npm install
 ```
 
 Don't have npm? [Learn how to install Node.js and npm here](https://docs.npmjs.com/getting-started/installing-node).
 
-#### Working your way around the application ####
+### Working your way around the application
 
 The starter project will come with everything you need to get started
 with Microcosm. This also includes a project structure:
@@ -92,7 +92,7 @@ that content in an index route, which will display when a user visits
 the homepage
 
 We use [`react-router`](https://github.com/reactjs/react-router) for
-routing. It's already included in `microcosm-starter`, so let's
+routing. It's already included in `microcosm-quickstart`, so let's
 go ahead and add an index route.
 
 Crack open `src/routes.js` and edit it to look like:
@@ -117,7 +117,7 @@ like:
 
 ```bash
 Error in ./src/routes.js
-Module not found: ./presenters/planets in ~/microcosm-starter/src
+Module not found: ./presenters/planets in ~/microcosm-quickstart/src
 ```
 
 That's because we haven't added a presenter yet. We'll do that next.
@@ -166,7 +166,7 @@ class Planets extends Presenter {
 export default Planets
 ```
 
-Now we see a list of planets! Now you might be asking yourself:
+Check out the list of planets in your browser! Now you might be asking yourself:
 
 > You said that Presenters isolate the view layer from the
 > application. Where's the separation?
@@ -189,6 +189,7 @@ export default function PlanetList () {
       <li>Jupiter</li>
       <li>Saturn</li>
       <li>Uranus</li>
+      <li>Neptune</li>
       <li>Pluto</li>
     </ul>
   )
@@ -308,7 +309,7 @@ class Repo extends Microcosm {
 export default Repo
 ```
 
-Here we're saying, "Mount the Planets store to `'planets'`." it will
+Here we're saying, "Mount the Planets store to `'planets'`." It will
 managing everything under `repo.state.planets`.
 
 We can subscribe to that in our Planets presenter. Open it up once
