@@ -19,7 +19,7 @@ dependencies. Type these commands into your terminal:
 
 ```bash
 git clone https://github.com/vigetlabs/microcosm-quickstart
-cd microcosm-starter
+cd microcosm-quickstart
 npm install
 ```
 
@@ -89,7 +89,7 @@ Foreshadowing things to come...
 
 Let's build an application that shows a list of planets. We'll place
 that content in an index route, which will display when a user visits
-the homepage
+the homepage.
 
 We use [`react-router`](https://github.com/reactjs/react-router) for
 routing. It's already included in `microcosm-quickstart`, so let's
@@ -128,7 +128,7 @@ Presenters are just special React components that are charged with
 higher levels of responsibility. We make a distinction between them
 and "passive view" components for a couple of reasons:
 
-1. Presenters provide an answer for where keep data operations and
+1. Presenters provide an answer for where to keep data operations and
    dispatch application actions.
 2. Presenters are a gateway. They keep application concerns outside of
    the majority of the presentation layer.
