@@ -406,8 +406,7 @@ course! We aren't asking for them.
 Let's use the Presenter's `presenterWillMount` lifecycle hook to fetch
 the planet data.
 
-`presenterWillMount` is given the current `repo` for the presenter
-specifically for this purpose:
+`presenterWillMount` is given the current `repo` specifically for this purpose:
 
 ```javascript
 // src/presenters/planets.js
