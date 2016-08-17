@@ -64,7 +64,7 @@ just created and booted your first Microcosm app!
 ### Personalize it
 
 The current site copy is cheerful, but a little too generic. This text
-lives inside of the generic layout file.
+lives inside of the application layout file.
 
 Let's update it, open `src/views/layout.js`
 
