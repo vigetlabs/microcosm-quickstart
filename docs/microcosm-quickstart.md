@@ -403,10 +403,9 @@ export default Planets
 You might have noticed that the planets went missing from the page. Of
 course! We aren't asking for them.
 
-Let's use the Presenter's `presenterWillMount` lifecycle hook to fetch
-the planet data.
-
-`presenterWillMount` is given the current `repo` specifically for this purpose:
+Let's use the Presenter's `setup` lifecycle hook to fetch the planet
+when the presenter boots up. `setup` is given the current `repo` for
+the presenter specifically for this purpose:
 
 ```javascript
 // src/presenters/planets.js
@@ -417,7 +416,7 @@ import {getPlanets} from '../actions/planets'
 
 class Planets extends Presenter {
 
-  presenterWillMount(repo) {
+  setup(repo) {
     repo.push(getPlanets)
   }
 
@@ -437,7 +436,7 @@ export default Planets
 ```
 
 And we're back! When the router is about to mount the Planets
-presenter to the page, it will call `presenterWillMount`. This will
+presenter to the page, it will call `setup`. This will
 cause a `getPlanets` to get queued up with the application's repo.
 
 Microcosm will process the action, sending updates to the stores who
