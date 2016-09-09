@@ -5,7 +5,7 @@ import {getPlanets} from '../actions/planets'
 
 class Planets extends Presenter {
 
-  presenterWillMount(repo) {
+  setup(repo) {
     repo.push(getPlanets)
   }
 
