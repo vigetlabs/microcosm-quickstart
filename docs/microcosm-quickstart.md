@@ -9,7 +9,7 @@ We'll cover these steps:
 1. Project setup
 2. Define a route
 3. Define a presenter
-4. Define a store
+4. Define a domain
 5. Define an action
 
 ## Project setup
@@ -34,7 +34,7 @@ with Microcosm. This also includes a project structure:
 src/
 ├── actions
 ├── presenters
-├── stores
+├── domain
 ├── style
 ├── views
 ├── index.js
@@ -266,14 +266,15 @@ export default function PlanetList ({ planets = [] }) {
 
 Much better.
 
-## Defining a store
+## Defining a domain
 
 We can do better. Application data really belongs in Microcosm. To do
-this, we need to make a Planets store. Create a new JavaScript file at
-`./src/stores/planets.js`:
+this, we need to make a Planets domain. This domain will define all of
+the operations for data related to planets. Create a new JavaScript
+file at `./src/domains/planets.js`:
 
 ```javascript
-// src/stores/planets.js
+// src/domains/planets.js
 const Planets = {
 
   getInitialState() {
@@ -290,19 +291,19 @@ export default Planets
 ```
 
 We call instances of Microcosm _repos_. An isolated warehouse to
-manage application state. Hooking up the planets store is easy:
+manage application state. Hooking up the planets domain is easy:
 
 ```javascript
 // src/repo.js
 import Microcosm from 'microcosm'
-import Planets from './stores/planets'
+import Planets from './domains/planets'
 
 class Repo extends Microcosm {
 
   constructor(options) {
     super(options)
 
-    this.addStore('planets', Planets)
+    this.addDomain('planets', Planets)
   }
 
 }
@@ -310,7 +311,7 @@ class Repo extends Microcosm {
 export default Repo
 ```
 
-Here we're saying, "Mount the Planets store to `'planets'`." It will
+Here we're saying, "Mount the Planets domain to `'planets'`." It will
 managing everything under `repo.state.planets`.
 
 We can subscribe to that in our Planets presenter. Open it up once
@@ -348,7 +349,7 @@ Awesome. Nice and separated.
 ## Defining an action
 
 Let's simulate what would happen if you were working with a planets
-API. In this case, the Planets store wouldn't know about all of the
+API. In this case, the Planets domain wouldn't know about all of the
 planets right on start-up. We need to fetch information from a server.
 
 Microcosm actions are responsible for dealing with asynchronous
@@ -370,11 +371,11 @@ export function getPlanets() {
 }
 ```
 
-And in the Planet's store, subscribe to it using the `register()`
+And in the Planet's domain, subscribe to it using the `register()`
 function:
 
 ```javascript
-// src/stores/planets.js
+// src/domains/planets.js
 import {getPlanets} from '../actions/planets'
 
 const Planets = {
@@ -439,7 +440,7 @@ And we're back! When the router is about to mount the Planets
 presenter to the page, it will call `setup`. This will
 cause a `getPlanets` to get queued up with the application's repo.
 
-Microcosm will process the action, sending updates to the stores who
+Microcosm will process the action, sending updates to the domains who
 indicate they want to get updates based on their `register` function.
 
 ## Wrapping up
