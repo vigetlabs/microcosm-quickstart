@@ -5,11 +5,13 @@
 import boot from '../../src/boot'
 import {createMemoryHistory} from 'react-router'
 
-export default function visit (path) {
+export default async function visit (path) {
   const home = createMemoryHistory({ path })
-  const div = document.createElement('div')
+  const el   = document.createElement('div')
+  const repo = boot(el, home).repo
 
-  boot(div, home)
+  // Wait for all history actions to finish
+  await repo.wait()
 
-  return div
+  return { el, repo }
 }

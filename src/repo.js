@@ -7,6 +7,16 @@ class Repo extends Microcosm {
     this.addDomain('planets', Planets)
   }
 
+  wait () {
+    return new Promise((resolve, reject) => {
+      this.on('change', function () {
+        if (this.history.size() === 0) {
+          resolve()
+        }
+      }, this)
+    })
+  }
+
 }
 
 export default Repo
