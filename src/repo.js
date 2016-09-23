@@ -1,10 +1,10 @@
 import Microcosm from 'microcosm'
-import Planets from './stores/planets'
+import Planets from './domains/planets'
 
 class Repo extends Microcosm {
 
   setup() {
-    this.addStore('planets', Planets)
+    this.addDomain('planets', Planets)
   }
 
 }
