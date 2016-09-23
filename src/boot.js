@@ -11,7 +11,9 @@ export default function boot (el, history = browserHistory) {
     return <Component {...props} repo={repo} />
   }
 
-  return DOM.render((
+  const component = DOM.render((
     <Router history={history} routes={routes} createElement={injectRepo} />
   ), el)
+
+  return { el, component, repo }
 }
