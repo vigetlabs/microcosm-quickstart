@@ -5,18 +5,18 @@ import {getPlanets} from '../actions/planets'
 
 class Planets extends Presenter {
 
-  setup(repo) {
+  setup (repo) {
     repo.push(getPlanets)
   }
 
-  viewModel() {
+  model () {
     return {
       planets: state => state.planets
     }
   }
 
-  render() {
-    return <PlanetList planets={this.state.planets} />
+  view ({ planets }) {
+    return <PlanetList planets={planets} />
   }
 
 }

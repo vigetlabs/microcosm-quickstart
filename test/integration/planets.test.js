@@ -1,16 +1,10 @@
-import test from 'ava'
 import boot from '../../src/boot'
 import visit from '../helpers/visit'
 
-test.cb('shows a list of planets on the homepage', assert => {
+test('shows a list of planets on the homepage', function () {
   const homepage = visit('/')
+  const planets = homepage.querySelectorAll('li')
 
-  setTimeout(function () {
-    const planets = homepage.querySelectorAll('li')
-
-    assert.is(planets[0].textContent, 'Mercury')
-    assert.is(planets[8].textContent, 'Pluto')
-
-    assert.end()
-  }, 250)
+  expect(planets[0].textContent).toEqual('Mercury')
+  expect(planets[8].textContent).toEqual('Pluto')
 })

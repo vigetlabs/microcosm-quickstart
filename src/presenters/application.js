@@ -4,8 +4,8 @@ import Layout from '../views/layout'
 
 class Application extends Presenter {
 
-  render() {
-    return <Layout children={ this.props.children } />
+  view ({ children }) {
+    return <Layout children={ children } />
   }
 
 }
