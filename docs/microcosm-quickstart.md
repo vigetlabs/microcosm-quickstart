@@ -146,7 +146,7 @@ import Presenter from 'microcosm/addons/presenter'
 
 class Planets extends Presenter {
 
-  render() {
+  view () {
     return (
       <ul>
         <li>Mercury</li>
@@ -207,7 +207,7 @@ import PlanetList from '../views/planet-list'
 
 class Planets extends Presenter {
 
-  render() {
+  view () {
     return <PlanetList />
   }
 
@@ -222,7 +222,7 @@ all about the data. It shouldn't care whether or not Pluto's a _real_
 planet. Let's fix that.
 
 We need to prepare data in the presenter to send down into the
-view. Presenters can implement a `viewModel` method that to do just
+view. Presenters can implement a `model` method that to do just
 that:
 
 ```javascript
@@ -233,14 +233,14 @@ import PlanetList from '../views/planet-list'
 
 class Planets extends Presenter {
 
-  viewModel() {
+  model () {
     return {
       planets: () => ['Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto']
     }
   }
 
-  render() {
-    return <PlanetList planets={this.state.planets} />
+  view ({ planets }) {
+    return <PlanetList planets={planets} />
   }
 
 }
@@ -323,15 +323,15 @@ import PlanetList from '../views/planet-list'
 
 class Planets extends Presenter {
 
-  viewModel() {
+  model () {
     return {
       // I'm new. Pull planets out of the repo's state
       planets: state => state.planets
     }
   }
 
-  render() {
-    return <PlanetList planets={this.state.planets} />
+  view ({ planets }) {
+    return <PlanetList planets={planets} />
   }
 
 }
@@ -339,7 +339,7 @@ class Planets extends Presenter {
 export default Planets
 ```
 
-Cool. Each value in the key/value map returned from `viewModel` is
+Cool. Each value in the key/value map returned from `model` is
 processed by the Presenter. When given a function, it will invoke it
 with the current application state.
 
@@ -420,14 +420,14 @@ class Planets extends Presenter {
     repo.push(getPlanets)
   }
 
-  viewModel() {
+  model () {
     return {
       planets: state => state.planets
     }
   }
 
-  render() {
-    return <PlanetList planets={this.state.planets} />
+  view ({ planets }) {
+    return <PlanetList planets={planets} />
   }
 
 }
