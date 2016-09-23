@@ -9,11 +9,13 @@ class Repo extends Microcosm {
 
   wait () {
     return new Promise((resolve, reject) => {
-      this.on('change', function () {
+      this.once('change', function sleep () {
         if (this.history.size() === 0) {
           resolve()
+        } else {
+          this.once('change', sleep)
         }
-      }, this)
+      })
     })
   }
 
