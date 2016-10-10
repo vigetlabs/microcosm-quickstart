@@ -5,10 +5,10 @@
   "devDependencies": {
     "enzyme": "2.4.1",
     "react-addons-test-utils": "15.3.2",
-    "react-scripts": "0.4.3"
+    "react-scripts": "0.6.1"
   },
   "dependencies": {
-    "microcosm": "10.0.0-rc3",
+    "microcosm": "10.0.0-rc6",
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "react-router": "2.8.1"

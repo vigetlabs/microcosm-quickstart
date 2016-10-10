@@ -300,9 +300,7 @@ import Planets from './domains/planets'
 
 class Repo extends Microcosm {
 
-  constructor(options) {
-    super(options)
-
+  setup () {
     this.addDomain('planets', Planets)
   }
 
