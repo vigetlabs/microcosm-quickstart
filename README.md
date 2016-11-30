@@ -3,7 +3,7 @@
 An extension of [create-react-pack](https://github.com/facebookincubator/create-react-app)
 to make getting started with Microcosm easier.
 
-Check the [quickstart guide](./docs/microcosm-quickstart.md) to get started.
+Check the [quickstart guide](http://code.viget.com/microcosm/guides/quickstart.html) to get started.
 
 ## Setup
 
@@ -32,7 +32,8 @@ Then open `./coverage/index.html`
 src/
 ├── actions
 ├── presenters
-├── stores
+├── domains
+├── effects
 ├── style
 ├── views
 ├── index.js
