@@ -1,15 +1,22 @@
-/**
- * Visit a page
- */
+import nightmare from 'nightmare'
+import url from 'url'
+import qs from 'qs'
 
-import boot from '../../src/boot'
-import {createMemoryHistory} from 'react-router'
+const BASE_URL = url.format({
+  protocol: 'http',
+  hostname: 'localhost',
+  port: process.env.PORT || 3000
+})
 
-export default function visit (path) {
-  const home = createMemoryHistory({ path })
-  const div = document.createElement('div')
+const DEBUG = process.env.DEBUG || false
 
-  boot(div, home)
+export default function (path='', query={}) {
+  const location = url.resolve(BASE_URL, path) + '?' + qs.stringify(query)
 
-  return div
+  const page = nightmare({
+    show: DEBUG,
+    pollInterval: 50
+  })
+
+  return page.goto(location)
 }

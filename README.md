@@ -18,10 +18,27 @@ npm start
 npm test
 ```
 
+This will run the unit test suite. Acceptance tests are not run by
+default. To execute them:
+
+### Acceptance Tests
+
+```
+npm run test:acceptance
+```
+
+Or run the entire test suite with:
+
+```
+npm run test:all
+```
+
+### Coverage
+
 Run test coverage with:
 
 ```
-npm run test:cov:html
+npm run test:cov
 ```
 
 Then open `./coverage/index.html`
