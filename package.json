@@ -6,7 +6,7 @@
     "enzyme": "^2.6.0",
     "nightmare": "^2.8.1",
     "react-addons-test-utils": "^15.4.1",
-    "react-scripts": "0.7.0"
+    "react-scripts": "^0.7.0"
   },
   "dependencies": {
     "microcosm": "^10.8.0",
